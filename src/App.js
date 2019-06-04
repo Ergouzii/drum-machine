@@ -22,17 +22,23 @@ class App extends React.Component {
 
   render() {
     return (
-        <div id={'drum-machine'}>
-          <h2 id={'display'}>{this.state.display}</h2>
-          {data.map(d => (
-              <DrumPad
-                  keyCode={d.keyCode}
-                  id={d.id}
-                  keyTrigger={d.keyTrigger}
-                  url={d.url}
-                  handleDisplay={this.handleDisplay}
-              />
-          ))}
+        <div className={'container'}>
+            <div id={'drum-machine'}>
+              <div className={'left'}>
+                  <h2 id={'display'}>{this.state.display}</h2>
+              </div>
+                <div className={'pads'}>
+              {data.map(d => (
+                  <DrumPad
+                      keyCode={d.keyCode}
+                      id={d.id}
+                      keyTrigger={d.keyTrigger}
+                      url={d.url}
+                      handleDisplay={this.handleDisplay}
+                  />
+              ))}
+                </div>
+            </div>
         </div>
     );
   }

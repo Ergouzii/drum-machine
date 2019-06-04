@@ -30,17 +30,19 @@ class DrumPad extends React.Component {
 
     render() {
         return (
-            <div
-                className={'drum-pad'}
-                id={this.props.id}
-                onClick={this.play}>
-                <p>{this.props.keyTrigger}</p>
-                <audio
-                    ref={ref => this.audio = ref} // this smart way of referencing audio element
-                                                  // is from Ben Brooke https://www.youtube.com/watch?v=QXX4aI9DOVE
-                    src={this.props.url}
-                    className={'clip'}
-                    id={this.props.id} />
+            <div>
+                <div
+                    className={'drum-pad'}
+                    id={this.props.id}
+                    onClick={this.play}>
+                    <audio
+                        ref={ref => this.audio = ref} // this smart way of referencing audio element
+                                                      // is from Ben Brooke https://www.youtube.com/watch?v=QXX4aI9DOVE
+                        src={this.props.url}
+                        className={'clip'}
+                        id={this.props.id} />
+                    {this.props.keyTrigger}
+                </div>
             </div>
         );
     }

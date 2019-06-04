@@ -5,24 +5,45 @@
   font-size: 24px;
 }
 
-body {
+.container {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 80vh;
 }
 
 #drum-machine {
-  width: 600px;
+  max-width: 800px;
+  width: 100%;
   display: flex;
   background: #333333;
-  padding: 20px 50px;
+  margin: 50px;
+  padding: 20px;
   border-radius: 5px;
   box-shadow: 5px 5px 8px 3px #333;
+  justify-content: center;
+}
+
+.left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
 }
 
 #display {
-  position: absolute;
-  margin-top: 0;
+  background-color: cornflowerblue;
+  width: 250px;
+  height: 30px;
+  color: #333333;
+}
+
+.pads {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
 }
 
 .drum-pad {
@@ -32,4 +53,7 @@ body {
   height: 50px;
   border-radius: 50%;
   text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  margin: 20px 10px;
 }
