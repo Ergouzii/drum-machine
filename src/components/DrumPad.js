@@ -10,6 +10,7 @@ class DrumPad extends React.Component {
     play = () => {
         this.audio.currentTime = 0;
         this.audio.play();
+        this.props.handleDisplay(this.props.id)
     };
 
     render() {

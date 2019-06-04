@@ -9,8 +9,16 @@ class App extends React.Component {
 
     this.state = {
       display: ''
-    }
+    };
+
+    this.handleDisplay = this.handleDisplay.bind(this)
   }
+
+  handleDisplay = newDisplay => {
+    this.setState({
+      display: newDisplay // update the display
+    })
+  };
 
   render() {
     return (
@@ -21,6 +29,7 @@ class App extends React.Component {
                   id={d.id}
                   keyTrigger={d.keyTrigger}
                   url={d.url}
+                  handleDisplay={this.handleDisplay}
               />
           ))}
         </div>
