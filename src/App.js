@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      display: ''
+      display: 'Click or press key'
     };
 
     this.handleDisplay = this.handleDisplay.bind(this)
@@ -26,6 +26,7 @@ class App extends React.Component {
           <h2 id={'display'}>{this.state.display}</h2>
           {data.map(d => (
               <DrumPad
+                  keyCode={d.keyCode}
                   id={d.id}
                   keyTrigger={d.keyTrigger}
                   url={d.url}

@@ -7,6 +7,21 @@ class DrumPad extends React.Component {
         this.play = this.play.bind(this)
     }
 
+    // this is active when DrumPad is just mounted
+    componentDidMount() {
+        document.addEventListener('keydown', this.handleKeyDown)
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('keydown', this.handleKeyDown);
+    }
+
+    handleKeyDown = e => {
+        if (e.keyCode === this.props.keyCode) {
+            this.play()
+        }
+    };
+
     play = () => {
         this.audio.currentTime = 0;
         this.audio.play();
