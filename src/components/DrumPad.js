@@ -40,7 +40,7 @@ class DrumPad extends React.Component {
                                                       // is from Ben Brooke https://www.youtube.com/watch?v=QXX4aI9DOVE
                         src={this.props.url}
                         className={'clip'}
-                        id={this.props.id} />
+                        id={this.props.keyTrigger} />
                     {this.props.keyTrigger}
                 </div>
             </div>
